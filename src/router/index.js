@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-//首页
+// 首页
 import BrandIndex from '@/components/brand/Index'
 import BrandDetail from '@/components/brand/Detail'
-//个人中心
+// 个人中心
 import HomeIndex from '@/components/home/Index'
 Vue.use(Router)
 
@@ -11,12 +11,12 @@ export default new Router({
   routes: [
     {
       path: '/brand',
-      name: '1',
+      name: 'BrandIndex',
       component: BrandIndex,
       children: [
         {
-          path: '/detail',
-          name: '2',
+          path: 'detail',
+          name: 'BrandDetail',
           component: BrandDetail
         }
       ]
@@ -27,7 +27,7 @@ export default new Router({
       component: HomeIndex,
       children: [
         {
-          path: '/detail',
+          path: 'detail',
           name: '2',
           component: BrandDetail
         }

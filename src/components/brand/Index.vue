@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: '商标列表',
+  name: 'BrandIndex',
   props: ['id'],
   data () {
     return {
@@ -21,5 +21,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  @import "brand.css";
+  @import "./brand.css";
 </style>

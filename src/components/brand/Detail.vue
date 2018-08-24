@@ -1,12 +1,13 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p>1234565</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: '商标详情',
+  name: 'BrandDetail',
   props: ['id'],
   data () {
     return {
