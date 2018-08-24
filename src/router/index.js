@@ -9,29 +9,8 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/brand',
-      name: 'BrandIndex',
-      component: BrandIndex,
-      children: [
-        {
-          path: 'detail',
-          name: 'BrandDetail',
-          component: BrandDetail
-        }
-      ]
-    },
-    {
-      path: '/home',
-      name: '1',
-      component: HomeIndex,
-      children: [
-        {
-          path: 'detail',
-          name: '2',
-          component: BrandDetail
-        }
-      ]
-    }
+    { path: '/brand', component: BrandIndex, },
+    { path: '/brand/detail', component: BrandDetail },
+    { path: '/home', component: HomeIndex, }
   ]
 })
