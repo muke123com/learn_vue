@@ -1,4 +1,4 @@
-# brand_trade_vue
+# vue
 
 ## Build Setup
 
