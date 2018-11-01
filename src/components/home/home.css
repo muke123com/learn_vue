@@ -3,4 +3,8 @@
 }
 .css-test{
     color: red;
+    background: url(../../assets/logo.png);
+}
+.nice li{
+    display: inline-block;
 }

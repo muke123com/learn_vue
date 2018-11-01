@@ -2,7 +2,8 @@
     <div class="container">
         <h1 class="title">{{ msg }}</h1>
         <div class="css-test">css测试</div>
-        <ul>
+        <img src="../../assets/logo.png"/>
+        <ul class="nice">
             <li v-for="item in niceMap">{{item['num']}} {{item['name']}}</li>
         </ul>
     </div>
@@ -25,7 +26,7 @@
             getData: function () {
                 this.niceMap = niceMap;
                 console.log(niceMap);
-            }
+            },
         }
     }
 </script>

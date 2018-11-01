@@ -1,27 +1,24 @@
 <template>
-    <div>
-        <h1>{{ msg }}</h1>
+    <div class="footer">
+        <h1 class="title">{{ msg }}</h1>
     </div>
 </template>
 
 <script>
-
     export default {
-        components:{
-            headerBox
-        },
-        name: 'Layout',
+        name: 'footer-box',
         data() {
             return {
-                msg: 'header'
+                msg: 'footer'
             }
         },
         created() {
-            console.log(this.$route)
+        },
+        methods: {
         }
     }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    @import "footer.css";
 </style>

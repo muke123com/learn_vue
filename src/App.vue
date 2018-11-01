@@ -1,16 +1,21 @@
 <template>
-  <div id="app">
-    <layout></layout>
-    <router-view/>
-  </div>
+    <div id="app">
+        <header-box></header-box>
+        <router-view/>
+        <footer-box></footer-box>
+    </div>
 </template>
 
 <script>
-import Layout from './components/layout/Layout.vue'
+    import headerBox from './components/header/Header'
+    import footerBox from './components/footer/Footer'
 
-export default {
-  components: {Layout},
-  name: 'App'
-}
+    export default {
+        components: {
+            headerBox,
+            footerBox
+        },
+        name: 'App'
+    }
 </script>
 
