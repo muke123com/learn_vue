@@ -22,3 +22,8 @@ npm run e2e
 npm test
 
 ```
+
+```js
+//main.js
+Vue.prototype.GLOBAL = global; //设置全局变量
+```
