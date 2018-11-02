@@ -1,31 +1,43 @@
 <template>
-    <div class="container">
-        <h1 class="title">{{ msg }}</h1>
-        <div class="css-test">css测试</div>
+    <div class="home">
         <img src="../../assets/logo.png"/>
         <ul class="nice">
             <li v-for="item in niceMap">{{item['num']}} {{item['name']}}</li>
         </ul>
+        <div class="utils">
+            <time-box ids="123"></time-box>
+            <span>{{msg}}</span>
+            <transition-box>{{msg}}</transition-box>
+        </div>
     </div>
 </template>
 
 <script>
+    import transitionBox from '../utils/Transition'
+    import timeBox from '../utils/Time'
+    import TransitionBox from "../utils/Transition.vue";
     export default {
+        components: {
+            TransitionBox,
+            timeBox
+        },
         name: 'home',
         data() {
             return {
-                msg: '123',
+                msg: '',
                 niceMap: []
             }
         },
         created() {
+            let _this = this;
             this.getData();
-            console.log(this.common);
+            this.vm.$on('test', function (msg) {
+                _this.msg = msg;
+            });
         },
         methods: {
             getData: function () {
                 this.niceMap = niceMap;
-                console.log(niceMap);
             },
         }
     }
