@@ -2,6 +2,7 @@
     <div class="time-box">
         <h3>{{ids}}</h3>
         <span>{{time}}</span>
+        <p><slot></slot></p>
     </div>
 </template>
 
