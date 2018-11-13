@@ -1,0 +1,9 @@
+.functionBasedPropVal{
+    position: relative;
+}
+.square{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ff7200;
+}
