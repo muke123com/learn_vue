@@ -14,17 +14,20 @@
         <router-link to="/learn/anime">
             <button class="btn btn-default">anime</button>
         </router-link>
+        <vuex-box></vuex-box>
     </div>
 </template>
 
 <script>
     import transitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
-    import TransitionBox from "../utils/Transition.vue";
+    import TransitionBox from "../utils/Transition";
+    import vuexBox from '../Vuex/index'
     export default {
         components: {
             TransitionBox,
-            timeBox
+            timeBox,
+            vuexBox
         },
         name: 'home',
         data() {

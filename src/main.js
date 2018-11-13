@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import global from './components/Global'
 import router from './router'
+import store from './store'
 
 Vue.config.productionTip = false;
 Vue.prototype.common = global.common;
@@ -13,6 +14,7 @@ Vue.prototype.vm = new Vue();
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
