@@ -1,6 +1,6 @@
 <template>
     <div class="vuex-box">
-        {{msg}}
+        <span @click="$store.commit('switch_state')">{{msg}} {{$store.state.home.show}}</span>
     </div>
 </template>
 <script>
