@@ -14,6 +14,9 @@
         <router-link to="/learn/anime">
             <button class="btn btn-default">anime</button>
         </router-link>
+        <router-link to="/learn/lifecycle">
+            <button class="btn btn-default">lifecycle</button>
+        </router-link>
         <vuex-box></vuex-box>
     </div>
 </template>

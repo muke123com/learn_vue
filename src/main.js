@@ -6,9 +6,9 @@ import global from './components/Global'
 import router from './router'
 import store from './store'
 
-Vue.config.productionTip = false;
-Vue.prototype.common = global.common;
-Vue.prototype.vm = new Vue();
+Vue.config.productionTip = false
+Vue.prototype.common = global.common
+Vue.prototype.vm = new Vue()
 
 /* eslint-disable no-new */
 new Vue({
