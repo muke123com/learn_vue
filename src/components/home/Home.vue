@@ -17,6 +17,7 @@
         <router-link to="/learn/lifecycle">
             <button class="btn btn-default">lifecycle</button>
         </router-link>
+        <calc-box></calc-box>
         <vuex-box></vuex-box>
     </div>
 </template>
@@ -25,11 +26,13 @@
     import transitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
     import TransitionBox from "../utils/Transition";
+    import calcBox from "../utils/Calc";
     import vuexBox from '../Vuex/index'
     export default {
         components: {
             TransitionBox,
             timeBox,
+            calcBox,
             vuexBox
         },
         name: 'home',

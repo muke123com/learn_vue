@@ -1,10 +1,14 @@
 <template>
     <div class="vuex-box">
-        <span @click="$store.commit('switch_state')">{{msg}} {{$store.state.home.show}}</span>
+        <span @click="$store.commit('add_count')">增加count</span>
+        <vuex-state></vuex-state>
     </div>
 </template>
 <script>
+    import VuexState from "./state.vue";
+
     export default {
+        components: {VuexState},
         name: 'vuex-box',
         data() {
             return {
@@ -12,7 +16,6 @@
             }
         },
         created() {
-            console.log(this.$store.state.home)
         },
     }
 </script>
