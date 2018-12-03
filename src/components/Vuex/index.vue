@@ -1,8 +1,8 @@
 <template>
     <div class="container vuex">
         <div class="top">
-            <p>{{$store.state.test.msg}}</p>
-            <p>{{$store.getters.test_arr}}</p>
+            <p>{{msg}}</p>
+            <p>{{test_arr}}</p>
         </div>
         <div class="btns">
             <a href="javascript:void(0)" @click="test_mutations">mutations</a>
@@ -12,25 +12,40 @@
     </div>
 </template>
 <script>
+    import { mapState,mapMutations,mapActions,mapGetters } from 'vuex'
     export default {
         data(){
             return {
-                msg: 'vuex'
+
             }
+        },
+        computed: {
+            ...mapState({
+                msg: state=>state.test.msg
+            }),
+            ...mapActions(['test_actions']),
+            ...mapGetters(['test_arr']),
+//            msg() {
+//                return this.$store.state.test.msg
+//            },
+//            test_arr() {
+//                return this.$store.getters.test_arr
+//            }
         },
         created(){
             this.init()
         },
         methods: {
             init(){
-                this.$store.commit('change_title', {title: 'vuex'})
+                this.change_title({title: 'vuex'})
             },
-            test_mutations(){
-                this.$store.commit('test_mutations');
-            },
-            test_actions(){
-                this.$store.dispatch('test_actions');
-            },
+            ...mapMutations(['test_mutations','change_title']),
+//            test_mutations(){
+//                this.$store.commit('test_mutations');
+//            },
+//            test_actions(){
+//                this.$store.dispatch('test_actions');
+//            },
         }
     }
 </script>

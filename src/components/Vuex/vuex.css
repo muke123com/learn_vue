@@ -5,6 +5,7 @@
 .top {
     height: 200px;
     overflow: auto;
+    word-wrap: break-word;
 }
 
 .btns {
