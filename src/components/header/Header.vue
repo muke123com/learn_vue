@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <h1 class="title">{{ msg }}</h1>
+        <h1 class="title">{{ $store.state.common.title }}</h1>
     </div>
 </template>
 
@@ -9,11 +9,10 @@
         name: 'header-box',
         data() {
             return {
-                msg: 'header'
+                msg: ''
             }
         },
         created() {
-
         },
         methods: {
         }

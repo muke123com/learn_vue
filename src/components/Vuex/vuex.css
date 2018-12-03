@@ -1,5 +1,22 @@
-.state-box{
-    padding: 12px;
+.vuex{
+    padding: 15px;
+}
+
+.top {
+    height: 200px;
+    overflow: auto;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btns a{
+    display: inline-block;
+    padding: 3px 5px;
+    color: #666;
     border: 1px solid #ddd;
     border-radius: 2px;
 }

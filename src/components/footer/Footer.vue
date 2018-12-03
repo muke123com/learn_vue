@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="footer" style="display: none">
         <h1 class="title">{{ msg }}</h1>
     </div>
 </template>
@@ -9,7 +9,7 @@
         name: 'footer-box',
         data() {
             return {
-                msg: 'footer'
+                msg: ''
             }
         },
         created() {

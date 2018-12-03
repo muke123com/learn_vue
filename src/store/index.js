@@ -1,14 +1,20 @@
 import Vue from 'vue'
 import vuex from 'vuex'
 
-import home_store from './home_store'
-import vuex_store from './vuex_store'
+import test from './modules/test'
+import common from './modules/common'
+import mutations from './mutations'
+import actions from './actions'
+import getters from './getters'
 
 Vue.use(vuex)
 
 export default new vuex.Store({// store对象
-  modules: {
-    home: home_store,
-    vuex: vuex_store
-  }
+    modules: {
+        test: test,
+        common: common
+    },
+    mutations: mutations,
+    actions: actions,
+    getters: getters
 })
