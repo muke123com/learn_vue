@@ -3,6 +3,8 @@ import vuex from 'vuex'
 
 import test from './modules/test'
 import common from './modules/common'
+import calc from './modules/calc'
+
 import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
@@ -12,7 +14,8 @@ Vue.use(vuex)
 export default new vuex.Store({// store对象
     modules: {
         test: test,
-        common: common
+        common: common,
+        calc: calc
     },
     mutations: mutations,
     actions: actions,

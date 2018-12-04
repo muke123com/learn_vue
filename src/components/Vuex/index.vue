@@ -23,7 +23,6 @@
             ...mapState({
                 msg: state=>state.test.msg
             }),
-            ...mapActions(['test_actions']),
             ...mapGetters(['test_arr']),
 //            msg() {
 //                return this.$store.state.test.msg
@@ -40,6 +39,7 @@
                 this.change_title({title: 'vuex'})
             },
             ...mapMutations(['test_mutations','change_title']),
+            ...mapActions(['test_actions']),
 //            test_mutations(){
 //                this.$store.commit('test_mutations');
 //            },
