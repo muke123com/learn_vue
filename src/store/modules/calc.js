@@ -2,6 +2,7 @@ export default {
     state: {
         key: '',
         formula: '',
-        result: 0
+        result: 0,
+        re: false
     }
 }

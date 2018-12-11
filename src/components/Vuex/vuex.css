@@ -31,13 +31,18 @@
 }
 .calc-top {
     margin-bottom: 20px;
+    text-align: right;
     background-color: #fff;
     border: 1px solid #ddd;
+}
+.calc-top div{
+    padding-right: 10px;
 }
 .calc-formula {
     height: 20px;
     line-height: 20px;
     overflow: hidden;
+    border-bottom: 1px solid #eee;
 }
 .calc-result {
     height: 30px;
