@@ -1,6 +1,6 @@
 .time-box{
     display: inline-block;
-    font-size: 30px;
+    margin-bottom: 30px;
     vertical-align: top;
 }
 .move-enter-active,.move-leave-active{

@@ -1,6 +1,6 @@
 <template>
-    <div class="footer" style="display: none">
-        <h1 class="title">{{ msg }}</h1>
+    <div class="footer">
+        <audio src="/static/xxs.mp3" autoplay="autoplay" controls style="margin-top: 5px; width: 100%"></audio>
     </div>
 </template>
 

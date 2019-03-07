@@ -1,38 +1,34 @@
 <template>
     <div class="home">
-        <img src="../../assets/logo.png"/>
-        <ul class="nice">
-            <li v-for="item in niceMap">
-                {{item['num']}} {{item['name']}}
+        <div class="component">
+            <div class="utils">
+                <time-box ids="123">时间：</time-box>
+            </div>
+            <ul class="link">
+                <router-link tag="li" to="/learn/anime">
+                    anime
+                </router-link>
+                <router-link tag="li" to="/learn/lifecycle">
+                    lifecycle
+                </router-link>
+            </ul>
+        </div>
+        <ul class="learn-modules">
+            <li>
+
             </li>
         </ul>
-        <div class="utils">
-            <time-box ids="123">slot插槽</time-box>
-            <span>{{msg}}</span>
-            <transition-box></transition-box>
-        </div>
-        <router-link to="/learn/anime">
-            <button class="btn btn-default">anime</button>
-        </router-link>
-        <router-link to="/learn/lifecycle">
-            <button class="btn btn-default">lifecycle</button>
-        </router-link>
-        <calc-box></calc-box>
-        <vuex-box></vuex-box>
     </div>
 </template>
 
 <script>
-    import transitionBox from '../utils/Transition'
+    import TransitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
-    import TransitionBox from "../utils/Transition";
-    import calcBox from "../utils/Calc";
     import vuexBox from '../Vuex/index'
     export default {
         components: {
             TransitionBox,
             timeBox,
-            calcBox,
             vuexBox
         },
         name: 'home',
@@ -51,7 +47,6 @@
         },
         methods: {
             getData: function () {
-                this.niceMap = niceMap;
             },
         }
     }
