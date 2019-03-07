@@ -61,3 +61,8 @@
 .learn-modules li:nth-child(3n){
     margin-right: 0;
 }
+.learn-modules li h2{
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
