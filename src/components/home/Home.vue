@@ -5,6 +5,9 @@
                 <time-box ids="123">时间：</time-box>
             </div>
             <ul class="link">
+                <router-link tag="li" to="/learn/css3">
+                    css3
+                </router-link>
                 <router-link tag="li" to="/learn/anime">
                     anime
                 </router-link>
@@ -13,9 +16,9 @@
                 </router-link>
             </ul>
         </div>
-        <ul class="learn-modules">
-            <li>
-
+        <ul class="learn-modules clearfix">
+            <li v-for="l in list">
+                1
             </li>
         </ul>
     </div>
@@ -35,7 +38,8 @@
         data() {
             return {
                 msg: '',
-                niceMap: []
+                niceMap: [],
+                list: new Array(10)
             }
         },
         created() {
