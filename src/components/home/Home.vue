@@ -17,19 +17,24 @@
             </ul>
         </div>
         <ul class="learn-modules clearfix">
-            <li v-for="l in list">
-                1
+            <li>
+                <h2>组件传值</h2>
+                <parent-box></parent-box>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
+    import ParentBox from '../Learn/componentValue/Parent'
     import TransitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
     import vuexBox from '../Vuex/index'
+    import Parent from "../Learn/componentValue/Parent.vue";
     export default {
         components: {
+
+            ParentBox,
             TransitionBox,
             timeBox,
             vuexBox
@@ -39,7 +44,7 @@
             return {
                 msg: '',
                 niceMap: [],
-                list: new Array(10)
+                list: new Array(9)
             }
         },
         created() {

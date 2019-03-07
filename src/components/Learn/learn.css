@@ -66,3 +66,17 @@
 .attr-list span:hover,.attr-list span.active{
     color: #ff7200;
 }
+
+.child-boxes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    height: 225px;
+}
+.child-boxes .child-box{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
