@@ -21,20 +21,33 @@
                 <h2>组件传值</h2>
                 <parent-box></parent-box>
             </li>
+            <li>
+                <h2>Promise</h2>
+                <promise-box></promise-box>
+            </li>
+            <li>
+                <h2>async/await</h2>
+                <async-box></async-box>
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
+    //组件传值
     import ParentBox from '../Learn/componentValue/Parent'
+    //promise同步异步
+    import PromiseBox from '../Learn/es6/Promise'
+    import AsyncBox from '../Learn/es6/Async'
     import TransitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
     import vuexBox from '../Vuex/index'
     import Parent from "../Learn/componentValue/Parent.vue";
     export default {
         components: {
-
             ParentBox,
+            PromiseBox,
+            AsyncBox,
             TransitionBox,
             timeBox,
             vuexBox
