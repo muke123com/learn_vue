@@ -1,6 +1,11 @@
 <template>
     <div class="async-box">
-        <a href="javascript:void(0)" class="btn"></a>
+        <div class="btns">
+            <a href="javascript:void(0)" class="btn" @click="testAsync">测试异步</a>
+        </div>
+        <div class="logs">
+            <p v-for="log in logs">{{log}}</p>
+        </div>
     </div>
 </template>
 <script>
@@ -8,17 +13,25 @@
         name: 'async',
         data(){
             return {
-                msg: ''
+                msg: '',
+                logs: []
             }
         },
         methods: {
             testAsync() {
                 // async 用于表示函数是一个异步函数
                 async function afn() {
-                    return "后执行"
+                    return "后执行";
                 }
-                afn();
-                console.log("在后面但先执行")
+                console.log(afn());
+                afn().then((value) => {
+                    this.log(value)
+                });
+                this.log("在后面但先执行");
+            },
+            testAsyncAwait
+            log(msg) {
+                this.logs.push(msg)
             }
         }
     }
