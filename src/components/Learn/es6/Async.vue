@@ -2,6 +2,7 @@
     <div class="async-box">
         <div class="btns">
             <a href="javascript:void(0)" class="btn" @click="testAsync">测试异步</a>
+            <a href="javascript:void(0)" class="btn" @click="testAsyncAwait">async/await</a>
         </div>
         <div class="logs">
             <p v-for="log in logs">{{log}}</p>
@@ -29,7 +30,18 @@
                 });
                 this.log("在后面但先执行");
             },
-            testAsyncAwait
+            testAsyncAwait() {
+                async function afn() {
+                    let a = await new Promise((resolve,reject) => {
+                        setTimeout(() => {
+                            console.log('2秒');
+                            resolve('done')
+                        },2000)
+                    });
+                    console.log(a);
+                }
+                afn();
+            },
             log(msg) {
                 this.logs.push(msg)
             }
