@@ -29,6 +29,10 @@
                 <h2>async/await</h2>
                 <async-box></async-box>
             </li>
+            <li>
+                <h2>Less</h2>
+                <less-box></less-box>
+            </li>
         </ul>
     </div>
 </template>
@@ -39,6 +43,7 @@
     //promise同步异步
     import PromiseBox from '../Learn/es6/Promise'
     import AsyncBox from '../Learn/es6/Async'
+    import LessBox from '../Learn/Less'
     import TransitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
     import vuexBox from '../Vuex/index'
@@ -48,6 +53,7 @@
             ParentBox,
             PromiseBox,
             AsyncBox,
+            LessBox,
             TransitionBox,
             timeBox,
             vuexBox

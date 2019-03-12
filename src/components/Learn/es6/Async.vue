@@ -31,14 +31,16 @@
                 this.log("在后面但先执行");
             },
             testAsyncAwait() {
+                let _this = this;
                 async function afn() {
                     let a = await new Promise((resolve,reject) => {
                         setTimeout(() => {
-                            console.log('2秒');
+                            _this.log('2秒');
+                            console.log(this);
                             resolve('done')
                         },2000)
                     });
-                    console.log(a);
+                    _this.log(a);
                 }
                 afn();
             },
