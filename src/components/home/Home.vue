@@ -5,6 +5,9 @@
                 <time-box ids="123">时间：</time-box>
             </div>
             <ul class="link">
+                <router-link tag="li" to="/vuex">
+                    Vuex
+                </router-link>
                 <router-link tag="li" to="/learn/css3">
                     css3
                 </router-link>

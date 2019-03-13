@@ -20,4 +20,6 @@
         name: 'App'
     }
 </script>
-
+<style>
+    @import "common.less";
+</style>

@@ -2,9 +2,13 @@ export default {
     test_mutations(state){
         state.test.msg += 'x'
     },
-    change_title(state, data){
+    ['CHANGE_TITLE'](state, data){
         state.common.title = data.title;
     },
+    ['ADD_LOGS'](state, text){
+        state.index.logs.push(text);
+    },
+
     //计算器
     //改变算式
     ['CLICK_CALC_BTN'](state, key){

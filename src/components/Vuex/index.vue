@@ -1,29 +1,29 @@
 <template>
-    <div class="container vuex">
-        <div class="top">
-            <p>{{msg}}</p>
-            <p>{{test_arr}}</p>
+    <div class="vuex-box">
+        <div class="logs" v-if="logs.length != 0">
+            <p v-for="item in logs">{{item}}</p>
         </div>
-        <div class="btns">
-            <a href="javascript:void(0)" @click="test_mutations">mutations</a>
-            <a href="javascript:void(0)" @click="test_actions">actions</a>
+        <div class="vuex-modules">
+            <mutations-box></mutations-box>
         </div>
-
     </div>
 </template>
 <script>
     import { mapState,mapMutations,mapActions,mapGetters } from 'vuex'
+    import MutationsBox from './learn/Mutations'
     export default {
+        components: {
+            MutationsBox
+        },
         data(){
             return {
-
             }
         },
         computed: {
             ...mapState({
-                msg: state=>state.test.msg
+                msg: state=>state.index.msg,
+                logs: state=>state.index.logs
             }),
-            ...mapGetters(['test_arr']),
 //            msg() {
 //                return this.$store.state.test.msg
 //            },
@@ -36,9 +36,9 @@
         },
         methods: {
             init(){
-                this.change_title({title: 'vuex'})
+                this.CHANGE_TITLE({title: 'vuex'})
             },
-            ...mapMutations(['test_mutations','change_title']),
+            ...mapMutations(['CHANGE_TITLE', 'ADD_LOGS']),
             ...mapActions(['test_actions']),
 //            test_mutations(){
 //                this.$store.commit('test_mutations');
@@ -50,5 +50,5 @@
     }
 </script>
 <style scoped>
-    @import "vuex.css";
+    @import "index.less";
 </style>

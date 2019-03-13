@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import vuex from 'vuex'
 
-import test from './modules/test'
+import index from './modules/index'
 import common from './modules/common'
 import calc from './modules/calc'
 
@@ -13,7 +13,7 @@ Vue.use(vuex)
 
 export default new vuex.Store({// store对象
     modules: {
-        test: test,
+        index: index,
         common: common,
         calc: calc
     },

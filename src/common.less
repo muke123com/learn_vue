@@ -1,8 +1,15 @@
 @charset "utf-8";
+@fontColor: #333;
+@bgColor: #ff4422;
+.box-shadow{
+    box-shadow: 0 2px 4px lighten(@bgColor, 20%);
+}
 html,body,h1,h2,h3,h4,h5,h6,hr,p,ul,ol,li,span,a,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em,i,b,strong,pre,legend,button,input,textarea,select,address,cite,dfn,var,code,kbd,samp,small,sup,sub
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video{ margin:0; padding:0; font-weight: normal; font-style: normal; box-sizing:border-box; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video{
+    margin:0; padding:0; font-weight: normal; font-style: normal; box-sizing:border-box;
+}
 ul,ol,li{list-style:none;}
-a{ color: #333}
+a{ color: @fontColor}
 html,body{
     height: 100%;
 }
