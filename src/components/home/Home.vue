@@ -40,6 +40,10 @@
                 <h2>ArrayFilter</h2>
                 <array-filter></array-filter>
             </li>
+            <li>
+                <h2>ObjectFunction</h2>
+                <object-knowledge></object-knowledge>
+            </li>
         </ul>
     </div>
 </template>
@@ -57,8 +61,10 @@
     import vuexBox from '../Vuex/index'
     import Parent from "../Learn/componentValue/Parent.vue";
     import ArrayFilter from "../Learn/es6/ArrayFilter.vue";
+    import ObjectKnowledge from "../Learn/es6/ObjectKnowledge.vue";
     export default {
         components: {
+            ObjectKnowledge,
             ArrayFilter,
             ParentBox,
             PromiseBox,
