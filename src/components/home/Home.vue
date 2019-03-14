@@ -36,6 +36,10 @@
                 <h2>Less</h2>
                 <less-box></less-box>
             </li>
+            <li>
+                <h2>ArrayFilter</h2>
+                <array-filter></array-filter>
+            </li>
         </ul>
     </div>
 </template>
@@ -46,13 +50,16 @@
     //promise同步异步
     import PromiseBox from '../Learn/es6/Promise'
     import AsyncBox from '../Learn/es6/Async'
+    import ArrayFilterBox from '../Learn/es6/ArrayFilter'
     import LessBox from '../Learn/Less'
     import TransitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
     import vuexBox from '../Vuex/index'
     import Parent from "../Learn/componentValue/Parent.vue";
+    import ArrayFilter from "../Learn/es6/ArrayFilter.vue";
     export default {
         components: {
+            ArrayFilter,
             ParentBox,
             PromiseBox,
             AsyncBox,
@@ -66,7 +73,6 @@
             return {
                 msg: '',
                 niceMap: [],
-                list: new Array(9)
             }
         },
         created() {
