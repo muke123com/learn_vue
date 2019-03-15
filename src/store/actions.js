@@ -1,8 +1,7 @@
 export default {
-    test_actions(store){
-        console.log("actions");
-        store.commit("test_mutations");
-        store.commit("test_mutations");
+    ['ADD_TWICE_LOG'](store){
+        store.commit("ADD_LOGS", '通过action触发第一次mutation');
+        store.commit("ADD_LOGS", '通过action触发第二次mutation');
     },
 
     click_calc_btn(store, key){

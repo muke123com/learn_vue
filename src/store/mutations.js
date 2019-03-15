@@ -8,6 +8,9 @@ export default {
     ['ADD_LOGS'](state, text){
         state.index.logs.push(text);
     },
+    ['CHANGE_LOGS'](state, logs){
+        state.index.logs = logs;
+    },
 
     //计算器
     //改变算式

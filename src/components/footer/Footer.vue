@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <audio src="/static/xxs.mp3" autoplay="autoplay" controls="controls" loop="loop" style="margin-top: 5px; width: 100%"></audio>
+        <audio src="/static/xxs.mp3" id="audio" autoplay="autoplay" controls="controls" loop="loop" style="margin-top: 5px; width: 100%"></audio>
     </div>
 </template>
 
@@ -14,6 +14,9 @@
         },
         created() {
 
+        },
+        mounted(){
+            document.getElementById("audio").volume = 0.3;
         },
         methods: {
         }
