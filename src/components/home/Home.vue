@@ -44,6 +44,10 @@
                 <h2>ObjectFunction</h2>
                 <object-knowledge></object-knowledge>
             </li>
+            <li>
+                <h2>Class</h2>
+                <learn-class></learn-class>
+            </li>
         </ul>
     </div>
 </template>
@@ -62,8 +66,10 @@
     import Parent from "../Learn/componentValue/Parent.vue";
     import ArrayFilter from "../Learn/es6/ArrayFilter.vue";
     import ObjectKnowledge from "../Learn/es6/ObjectKnowledge.vue";
+    import LearnClass from "../Learn/es6/ClassLearn.vue";
     export default {
         components: {
+            LearnClass,
             ObjectKnowledge,
             ArrayFilter,
             ParentBox,

@@ -18,6 +18,7 @@
             <a href="javascript:void(0)" class="btn" @click="testReverse" title="排序">reverse</a>
             <a href="javascript:void(0)" class="btn" @click="testEntries" title="返回数组的可迭代对象">entries</a>
             <a href="javascript:void(0)" class="btn" @click="testReduce" title="累加器">reduce</a>
+            <a href="javascript:void(0)" class="btn" @click="testArrayEs6" title="">es6拓展运算符</a>
         </div>
     </div>
 </template>
@@ -84,6 +85,11 @@
                     return total + num;
                 });
             },
+            // 拓展运算符（...）
+            testArrayEs6(){
+                let itemsCopy = ["a", "b", ...this.list];
+                this.newList = itemsCopy;
+            }
         }
     }
 </script>
