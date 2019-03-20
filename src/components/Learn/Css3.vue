@@ -22,6 +22,11 @@
             <div class="show-css" v-html="showCssStr">
             </div>
         </div>
+        <div class="box">
+            <div class="some-practice">
+                <div class="blink"></div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -114,4 +119,5 @@
 </script>
 <style scoped>
     @import "learn.css";
+    @import "css.less";
 </style>

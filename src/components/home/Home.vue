@@ -11,6 +11,9 @@
                 <router-link tag="li" to="/learn/css3">
                     css3
                 </router-link>
+                <router-link tag="li" to="/learn/h5">
+                    h5
+                </router-link>
                 <router-link tag="li" to="/learn/anime">
                     anime
                 </router-link>

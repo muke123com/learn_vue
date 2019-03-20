@@ -1,0 +1,16 @@
+.blink {
+  margin: 10px;
+  width: 3px;
+  height: 20px;
+  animation: blink 1s infinite; /* infinite 无限重复  */
+  background-color: #000;
+}
+
+@keyframes blink {
+  0%, 100%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+}
