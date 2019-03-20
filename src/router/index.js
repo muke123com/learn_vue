@@ -5,6 +5,7 @@ import HomeIndex from '@/components/home/Home'
 import Css3 from '@/components/Learn/Css3'
 import H5 from '@/components/Learn/h5/index'
 import AnimeJs from '@/components/Learn/Animejs'
+import Interview from '@/components/Learn/interview/Index'
 import Lifecycle from '@/components/Learn/Lifecycle'
 import Vuex from '@/components/Vuex/index'
 import VuexCalc from '@/components/Vuex/calc'
@@ -16,6 +17,7 @@ export default new Router({
     { path: '/learn/css3', component: Css3 },
     { path: '/learn/h5', component: H5 },
     { path: '/learn/anime', component: AnimeJs },
+    { path: '/learn/interview', component: Interview },
     { path: '/learn/lifecycle', component: Lifecycle },
     { path: '/vuex', component: Vuex },
     { path: '/vuex/calc', component: VuexCalc }

@@ -1,0 +1,44 @@
+@preHeight: 200px;
+
+.interview-box{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  width: 1300px;
+  .item{
+    width: 100%;
+  }
+}
+
+.question-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .list{
+    margin-bottom: 30px;
+    width: 100%;
+    .top{
+      height: @preHeight;
+      border: 1px solid #ddd;
+      text-align: left;
+      .left{
+        float: left;
+        padding: 20px;
+        width: 50%;
+        height: 100%;
+        border-right: 1px solid #ddd;
+        overflow: auto;
+      }
+      .right{
+        float: left;
+        padding: 20px;
+        width: 50%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.btns{
+  margin-top: 10px;
+}
