@@ -10,7 +10,7 @@
         props: ['ids'],
         data() {
             return {
-                time: ''
+                time: '00:00:00'
             }
         },
         created() {

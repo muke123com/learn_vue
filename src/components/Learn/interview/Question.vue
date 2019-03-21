@@ -38,6 +38,9 @@
                 pathStr: ""
             }
         },
+        created(){
+            this.$store.commit('CHANGE_TITLE', {title: '问 题'});
+        },
         methods: {
             //扁平化数组
             flatArr(){

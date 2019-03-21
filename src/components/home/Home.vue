@@ -17,6 +17,9 @@
                 <router-link tag="li" to="/learn/anime">
                     anime
                 </router-link>
+                <router-link tag="li" to="/learn/interview">
+                    interview
+                </router-link>
                 <router-link tag="li" to="/learn/lifecycle">
                     lifecycle
                 </router-link>
