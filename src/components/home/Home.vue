@@ -20,6 +20,9 @@
                 <router-link tag="li" to="/learn/interview">
                     interview
                 </router-link>
+                <router-link tag="li" to="/router">
+                    路由
+                </router-link>
                 <router-link tag="li" to="/learn/lifecycle">
                     lifecycle
                 </router-link>
