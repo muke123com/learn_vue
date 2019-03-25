@@ -2,7 +2,7 @@
     <div class="router-box">
         <router-view></router-view>
         <ul class="list scroll">
-            <router-link tag="li" class="li" v-for="(item, key) in list" :key="item['id']" :to="{path: ''+item['id'] }">
+            <router-link tag="li" v v-for="(item, key) in list" :key="item['id']" :to="{path: ''+item['id'] }">
                 <img :src="item['images']['small']">
                 <p>
                     <i class="color">{{item['title']}}</i><br>
@@ -28,6 +28,16 @@
         methods: {
             getList(){
                 this.list = movieList['subjects'];
+            },
+            beforeEnter: function (el) {
+                el.style.opacity = 0;
+                el.style.transformOrigin = 'left';
+            },
+            enter: function (el, done) {
+
+            },
+            leave: function (el, done) {
+
             }
         }
     }
