@@ -44,6 +44,12 @@
                 <label for="checked">多选框</label>
             </div>
         </div>
+        <div class="box">
+            <div class="slider">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
