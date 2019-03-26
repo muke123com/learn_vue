@@ -1,6 +1,10 @@
 <template>
     <div class="header">
-        <h1 class="title">{{ $store.state.common.title }}</h1>
+        <h1 class="title">
+            <router-link to="/">
+                {{ $store.state.common.title }}
+            </router-link>
+        </h1>
     </div>
 </template>
 

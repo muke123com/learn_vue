@@ -22,9 +22,26 @@
             <div class="show-css" v-html="showCssStr">
             </div>
         </div>
-        <div class="box">
+        <div class="box" :class="{filter:bgShow}">
             <div class="some-practice">
-                <div class="blink"></div>
+                <div class="block block1" title="inherit继承，箭头">
+                    <div class="callout"></div>
+                </div>
+                <div class="block block2" title="多个背景图片"></div>
+                <div class="block block3">
+                    <div class="text"></div>
+                </div>
+                <div class="block block4"></div>
+                <div class="block block5"></div>
+                <div class="block block6">M</div>
+                <div class="block block7" @click="bgShow = !bgShow">滤镜</div>
+                <div class="block block8"></div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="checked" />
+                <label for="checked">多选框</label>
             </div>
         </div>
     </div>
@@ -43,7 +60,8 @@
                     'flex-direction': 'row',
                 },
                 showCssStr: '',
-                testList: new Array(30)
+                testList: new Array(30),
+                bgShow: false
             }
         },
         watch: {

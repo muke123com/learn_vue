@@ -2,7 +2,7 @@
     <div class="router-box">
         <router-view></router-view>
         <ul class="list scroll">
-            <router-link tag="li" v v-for="(item, key) in list" :key="item['id']" :to="{path: ''+item['id'] }">
+            <router-link tag="li" v-for="(item, key) in list" :key="item['id']" :to="{name: 'routerDetail', params: { id: item['id'] }}">
                 <img :src="item['images']['small']">
                 <p>
                     <i class="color">{{item['title']}}</i><br>
