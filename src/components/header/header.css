@@ -1,9 +1,7 @@
 .header h1{
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
+    padding: 0.1em 0.2em;
     color: #fff;
-    font-size: 20px;
-    font-weight: normal;
-    background-color: #c2ecfa;
+    text-shadow: 0 0 0.1em, 0 0 0.3em;
+    font-size: 40px;
+    background-color: #282233;
 }

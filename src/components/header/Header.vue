@@ -1,10 +1,8 @@
 <template>
     <div class="header">
-        <h1 class="title">
-            <router-link to="/">
-                {{ $store.state.common.title }}
-            </router-link>
-        </h1>
+        <router-link tag="h1" to="/">
+            M
+        </router-link>
     </div>
 </template>
 
@@ -14,6 +12,16 @@
         data() {
             return {
                 msg: ''
+            }
+        },
+        computed: {
+            title(){
+                return this.$store.state.common.title;
+            }
+        },
+        watch: {
+            title(){
+                document.title = this.title?this.title:'练习';
             }
         },
         created() {

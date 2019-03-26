@@ -77,6 +77,7 @@
             }
         },
         created(){
+            this.$store.commit("CHANGE_TITLE",{title: 'CSS3'});
             this.getCssList();
             this.setCssStyle();
         },
