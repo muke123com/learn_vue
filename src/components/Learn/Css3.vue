@@ -1,5 +1,43 @@
 <template>
     <div class="learn-css3 w-center">
+        <div class="box" :class="{filter:bgShow}">
+            <div class="some-practice">
+                <div class="block block1" title="inherit继承，箭头">
+                    <div class="callout"></div>
+                </div>
+                <div class="block block2" title="多个背景图片"></div>
+                <div class="block block3">
+                    <div class="text"></div>
+                </div>
+                <div class="block block4"></div>
+                <div class="block block5"></div>
+                <div class="block block6">M</div>
+                <div class="block block7" @click="bgShow = !bgShow">滤镜</div>
+                <div class="block block8"></div>
+                <div class="block block9">
+                    <div class="checkbox">
+                        <input type="checkbox" name="" id="checked" checked="checked" />
+                        <label for="checked"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="other-practice">
+                <div class="panoramic"></div>
+                <div class="path">
+                    <div class="path-block"></div>
+                </div>
+            </div>
+        </div>
+        <!--resize-->
+        <div class="box">
+            <div class="slider">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <!--flex-->
         <div class="box">
             <h2>flex 布局</h2>
             <ul id="flex-box" class="flex-box">
@@ -20,34 +58,6 @@
                 </div>
             </div>
             <div class="show-css" v-html="showCssStr">
-            </div>
-        </div>
-        <div class="box" :class="{filter:bgShow}">
-            <div class="some-practice">
-                <div class="block block1" title="inherit继承，箭头">
-                    <div class="callout"></div>
-                </div>
-                <div class="block block2" title="多个背景图片"></div>
-                <div class="block block3">
-                    <div class="text"></div>
-                </div>
-                <div class="block block4"></div>
-                <div class="block block5"></div>
-                <div class="block block6">M</div>
-                <div class="block block7" @click="bgShow = !bgShow">滤镜</div>
-                <div class="block block8"></div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="checkbox">
-                <input type="checkbox" name="" id="checked" />
-                <label for="checked">多选框</label>
-            </div>
-        </div>
-        <div class="box">
-            <div class="slider">
-                <div class="left"></div>
-                <div class="right"></div>
             </div>
         </div>
     </div>
@@ -80,6 +90,8 @@
             this.$store.commit("CHANGE_TITLE",{title: 'CSS3'});
             this.getCssList();
             this.setCssStyle();
+        },
+        mounted(){
         },
         methods: {
             getCssList(){

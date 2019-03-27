@@ -35,7 +35,6 @@
 </template>
 <script>
     import movieList from './data'
-    console.log(movieList);
     export default {
         data(){
             return {

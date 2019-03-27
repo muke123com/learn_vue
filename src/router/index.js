@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 首页
+import Index from '@/components/Index/Index'
 import HomeIndex from '@/components/home/Home'
 import Css3 from '@/components/Learn/Css3'
 import H5 from '@/components/Learn/h5/index'
@@ -16,7 +17,8 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-    { path: '/', component: HomeIndex },
+    { path: '/', component: Index },
+    { path: '/home', component: HomeIndex },
     { path: '/learn/css3', component: Css3 },
     { path: '/learn/h5', component: H5 },
     { path: '/learn/anime', component: AnimeJs },
