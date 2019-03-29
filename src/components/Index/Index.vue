@@ -29,24 +29,11 @@
 
         },
         mounted(){
-            this.createParticles();
         },
         methods: {
             init(){
 
             },
-            createParticles(){
-                var scene = new THREE.Scene();
-
-                var renderer = new THREE.WebGLRenderer();
-                renderer.setSize( window.innerWidth, window.innerHeight );
-                document.getElementById("canvas").appendChild( renderer.domElement );
-
-                var spriteMap = new THREE.TextureLoader().load(require("@/assets/logo.png"))
-                var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
-                var sprite = new THREE.Sprite( spriteMaterial );
-                scene.add( sprite );
-            }
         }
     }
 </script>

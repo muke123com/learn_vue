@@ -13,6 +13,7 @@ import VuexCalc from '@/components/Vuex/calc'
 import VueRouterList from '@/components/Learn/vueRouter/List'
 import VueRouterDetail from '@/components/Learn/vueRouter/Detail'
 import Transition from '@/components/Learn/transition/Index'
+import Canvas from '@/components/Learn/Canvas/Image'
 Vue.use(Router);
 
 export default new Router({
@@ -30,5 +31,6 @@ export default new Router({
     { path: '/router/', component: VueRouterList ,children: [
         { name: 'routerDetail', path: ':id', component: VueRouterDetail }
     ]},
+    { path: '/canvas', component: Canvas },
   ]
 })
