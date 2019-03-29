@@ -53,9 +53,9 @@
 
                 text_canvas.id = 'text_canvas';
                 text_canvas.height = fontSize;
-                text_ctx.font = fontSize + "px Consolas";
+                text_ctx.font = fontSize + "px arial";
                 text_canvas.width = text_ctx.measureText(_this.text).width;
-                text_ctx.font = fontSize + "px Consolas";
+                text_ctx.font = fontSize + "px arial";
                 text_ctx.fillStyle = "#ff4200";
                 text_ctx.fillText(_this.text, 0, fontSize/5*4);
                 this.getImagedata(text_canvas, text_ctx);
@@ -68,8 +68,8 @@
                 img.onload = function () {
                     let imgData = text_ctx.getImageData(0,0,this.width,this.height);
                     let buffer32 = new Uint32Array(imgData.data.buffer);
-                    for(let i=0;i<img.width;i+=1){
-                        for(let j=0;j<img.height;j+=1){
+                    for(let i=0;i<img.width;i+=2){
+                        for(let j=0;j<img.height;j+=2){
                             if(buffer32[j * img.width + i]){
                                 let p = new Point(i,j);
                                 _this.points.push(p);
@@ -90,13 +90,13 @@
         constructor(x,y){
             this.x = x;
             this.y = y;
-            this.radius = Math.random()*4 + 1;
-            this.rv = 0.15;
+            this.radius = Math.random()*6 + 1;
+            this.rv = 0.05;
             this.color = colors[Math.floor(Math.random() * colors.length)];
         }
         draw(ctx){
             let x,y;
-            let n = 14;
+            let n = 5;
             x = this.x*n + 50;
             y = this.y*n + 50;
             ctx.beginPath();
@@ -106,10 +106,10 @@
         }
         update(ctx){
             this.radius += this.rv;
-            if(this.radius >= 5){
-                this.rv = -this.rv;
-            }else if(this.radius <= 1){
-                this.rv = -this.rv;
+            if(this.radius >= 4){
+                this.rv = -Math.abs(this.rv);
+            }else if(this.radius <= 2){
+                this.rv = Math.abs(this.rv);
             }
             this.draw(ctx);
         }
