@@ -13,7 +13,9 @@ import VuexCalc from '@/components/Vuex/calc'
 import VueRouterList from '@/components/Learn/vueRouter/List'
 import VueRouterDetail from '@/components/Learn/vueRouter/Detail'
 import Transition from '@/components/Learn/transition/Index'
-import Canvas from '@/components/Learn/Canvas/Image'
+import Canvas from '@/components/Learn/Canvas/Index'
+import ImagePoint from '@/components/Learn/Canvas/Image'
+import ImageParticle from '@/components/Learn/Canvas/ImageParticle'
 Vue.use(Router);
 
 export default new Router({
@@ -31,6 +33,9 @@ export default new Router({
     { path: '/router/', component: VueRouterList ,children: [
         { name: 'routerDetail', path: ':id', component: VueRouterDetail }
     ]},
-    { path: '/canvas', component: Canvas },
+    { path: '/canvas', component: Canvas, children: [
+        { name: 'ImagePoint', path: "", component: ImagePoint},
+        { name: 'imageParticle', path: "particle", component: ImageParticle},
+    ] },
   ]
 })

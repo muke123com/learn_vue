@@ -4,7 +4,7 @@
             <input type="text" v-model="text" />
             <button type="button" @click="start()">开始</button>
         </div>
-        <canvas id="canvas"></canvas>
+        <canvas id="canvas">您的浏览器不支持canvas</canvas>
     </div>
 </template>
 <script>
@@ -53,9 +53,9 @@
 
                 text_canvas.id = 'text_canvas';
                 text_canvas.height = fontSize;
-                text_ctx.font = fontSize + "px arial";
+                text_ctx.font = fontSize + "px BlinkMacSystemFont arial";
                 text_canvas.width = text_ctx.measureText(_this.text).width;
-                text_ctx.font = fontSize + "px arial";
+                text_ctx.font = fontSize + "px BlinkMacSystemFont arial";
                 text_ctx.fillStyle = "#ff4200";
                 text_ctx.fillText(_this.text, 0, fontSize/5*4);
                 this.getImagedata(text_canvas, text_ctx);
@@ -86,32 +86,5 @@
         '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800',
         '#FF5722'
     ];
-    class Point {
-        constructor(x,y){
-            this.x = x;
-            this.y = y;
-            this.radius = Math.random()*6 + 1;
-            this.rv = 0.05;
-            this.color = colors[Math.floor(Math.random() * colors.length)];
-        }
-        draw(ctx){
-            let x,y;
-            let n = 5;
-            x = this.x*n + 50;
-            y = this.y*n + 50;
-            ctx.beginPath();
-            ctx.arc(x,y,this.radius,0,Math.PI*2);
-            ctx.fillStyle = this.color;
-            ctx.fill()
-        }
-        update(ctx){
-            this.radius += this.rv;
-            if(this.radius >= 4){
-                this.rv = -Math.abs(this.rv);
-            }else if(this.radius <= 2){
-                this.rv = Math.abs(this.rv);
-            }
-            this.draw(ctx);
-        }
-    }
+    import Point from './Point';
 </script>

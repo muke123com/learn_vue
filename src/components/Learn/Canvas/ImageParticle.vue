@@ -1,0 +1,102 @@
+<template>
+    <div class="canvas-box" id="canvas-box">
+        <div class="file-box">
+            <input type="file" id="image" />
+            <button type="button" @click="start()">开始</button>
+        </div>
+        <canvas id="canvas">您的浏览器不支持canvas</canvas>
+    </div>
+</template>
+<script>
+    let canvas, ctx;
+    export default {
+        data(){
+            return {
+                text: "1",
+                points: [],
+                anime: ''
+            }
+        },
+        watch: {
+            text(){
+//                this.textToImage();
+            }
+        },
+        mounted(){
+            canvas = document.getElementById("canvas");
+            canvas.width = 800;
+            canvas.height = 640;
+            ctx = canvas.getContext("2d");
+//            this.start();
+        },
+        methods: {
+            start(){
+                let _this = this;
+                this.points = [];
+                this.getFileUrl();
+                window.cancelAnimationFrame(_this.anime);
+                console.log(this.points);
+                this.drawFrame();
+            },
+            drawFrame(){
+                let _this = this;
+                this.anime = window.requestAnimationFrame(_this.drawFrame, canvas);
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                this.points.map((p)=>{
+                    p.update(ctx);
+                })
+            },
+            getFileUrl() {
+                let _this = this;
+                this.$nextTick(() => {
+                    let file = document.getElementById("image").files[0];
+                    console.log(file);
+                    if(!/image\/\w+/.test(file.type)){
+                        alert("请上传图片");
+                        return false;
+                    }
+                    let reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function () {
+                        _this.imageToCanvas(this.result);
+                    }
+                })
+            },
+            imageToCanvas(url) {
+                let _this = this;
+                let c_canvas = document.createElement('canvas');
+                let c_ctx = c_canvas.getContext("2d");
+                let img = new Image();
+                img.src = url;
+                img.onload = function () {
+                    c_canvas.width = img.width;
+                    c_canvas.height = img.height;
+                    c_ctx.drawImage(img,0,0, img.width, img.height);
+                    let imgData = c_ctx.getImageData(0,0,this.width,this.height);
+                    _this.getImagedata(img, imgData);
+                };
+
+            },
+            // 获取imageData
+            getImagedata(img, imgData) {
+                let _this = this;
+                let data = imgData.data;
+                for(let i=0;i<img.width;i+=2){
+                    for(let j=0;j<img.height;j+=2){
+                        let pos = (j * img.width + i)*4;
+                            let r = data[pos];
+                            let g = data[pos + 1];
+                            let b = data[pos + 2];
+                            let color = "rgba(" + r + "," + g + "," + b + ")";
+                            if(!(r < 10 && g < 10 && b < 10)){
+                                let p = new Particle(i,j,color);
+                                _this.points.push(p);
+                            }
+                    }
+                }
+            },
+        }
+    }
+
+    import Particle from './Particle';
+</script>
