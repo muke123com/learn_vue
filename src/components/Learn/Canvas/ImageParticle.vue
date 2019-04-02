@@ -8,7 +8,9 @@
     </div>
 </template>
 <script>
-    let canvas, ctx;
+    let canvas, ctx, showCanvas, showCtx;
+    let canvas_width = 1000;
+    let canvas_height = 640;
     export default {
         data(){
             return {
@@ -23,10 +25,15 @@
             }
         },
         mounted(){
-            canvas = document.getElementById("canvas");
-            canvas.width = 1000;
-            canvas.height = 640;
+            canvas = document.createElement("canvas");
+            canvas.width = canvas_width;
+            canvas.height = canvas_height;
             ctx = canvas.getContext("2d");
+
+            showCanvas = document.getElementById("canvas");
+            showCanvas.width = canvas_width;
+            showCanvas.height = canvas_height;
+            showCtx = showCanvas.getContext("2d");
 //            this.start();
         },
         methods: {
@@ -43,7 +50,9 @@
                 ctx.clearRect(0,0,canvas.width,canvas.height);
                 this.points.map((p)=>{
                     p.update(ctx);
-                })
+                });
+                showCtx.clearRect(0,0,canvas.width,canvas.height);
+                showCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height);
             },
             getFileUrl() {
                 let _this = this;
@@ -95,8 +104,10 @@
                             let color = "rgba(" + r + "," + g + "," + b + ")";
                             if(!(r < 10 && g < 10 && b < 10)){
                                 let o = {
-                                    x1: i * 2 + (Math.random() - 0.5)*10 + c_left,
-                                    y1: j * 2 + (Math.random() - 0.5)*10 + c_top,
+                                    x1: i * 2 + c_left,
+                                    y1: j * 2 + c_top,
+//                                    x1: i * 2 + (Math.random() - 0.5)*10 + c_left,
+//                                    y1: j * 2 + (Math.random() - 0.5)*10 + c_top,
                                     x0: _this.getInitPoint()['x'],
                                     y0: _this.getInitPoint()['y'],
                                     color: color
