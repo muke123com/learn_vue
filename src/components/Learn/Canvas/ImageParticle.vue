@@ -24,7 +24,7 @@
         },
         mounted(){
             canvas = document.getElementById("canvas");
-            canvas.width = 800;
+            canvas.width = 1000;
             canvas.height = 640;
             ctx = canvas.getContext("2d");
 //            this.start();
@@ -35,7 +35,6 @@
                 this.points = [];
                 this.getFileUrl();
                 window.cancelAnimationFrame(_this.anime);
-                console.log(this.points);
                 this.drawFrame();
             },
             drawFrame(){
@@ -50,7 +49,6 @@
                 let _this = this;
                 this.$nextTick(() => {
                     let file = document.getElementById("image").files[0];
-                    console.log(file);
                     if(!/image\/\w+/.test(file.type)){
                         alert("请上传图片");
                         return false;
@@ -69,11 +67,15 @@
                 let img = new Image();
                 img.src = url;
                 img.onload = function () {
-                    c_canvas.width = img.width;
-                    c_canvas.height = img.height;
-                    c_ctx.drawImage(img,0,0, img.width, img.height);
+                    let n = img.width/img.height;
+                    let width = img.width > 180 ? 180 : img.width;
+                    let height = width/n;
+                    c_canvas.width = width;
+                    c_canvas.height = height;
+                    c_ctx.drawImage(img,0, 0, width, height);
                     let imgData = c_ctx.getImageData(0,0,this.width,this.height);
                     _this.getImagedata(img, imgData);
+                    console.log(_this.points.length);
                 };
 
             },
@@ -81,6 +83,9 @@
             getImagedata(img, imgData) {
                 let _this = this;
                 let data = imgData.data;
+                let c_left = canvas.width/2 - img.width/2;
+                console.log(c_left);
+                let c_top = 20;
                 for(let i=0;i<img.width;i+=2){
                     for(let j=0;j<img.height;j+=2){
                         let pos = (j * img.width + i)*4;
@@ -89,12 +94,28 @@
                             let b = data[pos + 2];
                             let color = "rgba(" + r + "," + g + "," + b + ")";
                             if(!(r < 10 && g < 10 && b < 10)){
-                                let p = new Particle(i,j,color);
+                                let o = {
+                                    x1: i * 2 + (Math.random() - 0.5)*10 + c_left,
+                                    y1: j * 2 + (Math.random() - 0.5)*10 + c_top,
+                                    x0: _this.getInitPoint()['x'],
+                                    y0: _this.getInitPoint()['y'],
+                                    color: color
+                                };
+                                let p = new Particle(o);
                                 _this.points.push(p);
                             }
                     }
                 }
             },
+            // 获取初始坐标
+            getInitPoint(){
+                let x = canvas.width/2;
+                let y = canvas.height - 30;
+                return {
+                    x: x,
+                    y: y
+                }
+            }
         }
     }
 
