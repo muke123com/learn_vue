@@ -120,7 +120,7 @@
             },
             // 获取初始坐标
             getInitPoint(){
-                let x = canvas.width/2;
+                let x = 30;
                 let y = canvas.height - 30;
                 return {
                     x: x,

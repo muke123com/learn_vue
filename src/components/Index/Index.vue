@@ -18,10 +18,10 @@
                     { title: 'Vuex', href: '/vuex' },
                     { title: 'css3', href: '/learn/css3' },
                     { title: 'h5', href: '/learn/h5' },
+                    { title: 'canvas动画', href: '/canvas' },
                     { title: 'interview', href: '/learn/interview' },
-                    { title: '路由', href: '/router' },
-                    { title: '动画', href: '/transition' },
-                    { title: 'lifecycle', href: '/learn/lifecycle' },
+                    { title: 'vue路由', href: '/router' },
+                    { title: 'vue生命周期', href: '/learn/lifecycle' },
                 ]
             }
         },
