@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-    let canvas, ctx, showCanvas, showCtx;
+    let canvas, ctx, showCanvas, showCtx, c_left, c_top;
     let canvas_width = 1000;
     let canvas_height = 640;
     export default {
@@ -81,6 +81,11 @@
                     let height = width/n;
                     c_canvas.width = width;
                     c_canvas.height = height;
+
+                    c_left = canvas.width/2 - width/2;
+                    console.log(c_left);
+                    c_top = 20;
+
                     c_ctx.drawImage(img,0, 0, width, height);
                     let imgData = c_ctx.getImageData(0,0,this.width,this.height);
                     _this.getImagedata(img, imgData);
@@ -92,9 +97,7 @@
             getImagedata(img, imgData) {
                 let _this = this;
                 let data = imgData.data;
-                let c_left = canvas.width/2 - img.width/2;
-                console.log(c_left);
-                let c_top = 20;
+
                 for(let i=0;i<img.width;i+=2){
                     for(let j=0;j<img.height;j+=2){
                         let pos = (j * img.width + i)*4;
