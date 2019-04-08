@@ -8,7 +8,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 Vue.prototype.common = global.common
-Vue.prototype.vm = new Vue()
+Vue.prototype.vm = new Vue();
+Vue.prototype.API_URL = 'http://47.92.68.251:3001';
 
 /* eslint-disable no-new */
 new Vue({

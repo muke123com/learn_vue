@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <audio src="/static/xxs.mp3" id="audio" controls="controls" loop="loop" style="margin-top: 5px; width: 100%"></audio>
+        <audio :src="API_URL + '/www/xxs.mp3'" id="audio" controls="controls" loop="loop" style="margin-top: 5px; width: 100%"></audio>
     </div>
 </template>
 
