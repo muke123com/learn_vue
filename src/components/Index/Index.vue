@@ -22,6 +22,8 @@
                     { title: 'interview', href: '/learn/interview' },
                     { title: 'vue路由', href: '/router' },
                     { title: 'vue生命周期', href: '/learn/lifecycle' },
+                    { title: '工具', href: '/tools' },
+//                    { title: '字符收集', href: '/learn/character' },
                 ]
             }
         },
