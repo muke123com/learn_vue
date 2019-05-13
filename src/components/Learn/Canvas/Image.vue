@@ -1,8 +1,8 @@
 <template>
     <div class="canvas-box" id="canvas-box">
         <div>
-            <input type="text" v-model="text" />
-            <button type="button" @click="start()">开始</button>
+            <input type="text" class="text" v-model="text" />
+            <button type="button" @click="start()" class="btn">开始</button>
         </div>
         <canvas id="canvas">您的浏览器不支持canvas</canvas>
     </div>

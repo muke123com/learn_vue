@@ -16,6 +16,7 @@ import Transition from '@/components/Learn/transition/Index'
 import Canvas from '@/components/Learn/Canvas/Index'
 import ImagePoint from '@/components/Learn/Canvas/Image'
 import ImageParticle from '@/components/Learn/Canvas/ImageParticle'
+import Music from '@/components/Learn/Canvas/Music'
 import Tools from '@/components/Tools/Index'
 Vue.use(Router);
 
@@ -37,6 +38,7 @@ export default new Router({
     { path: '/canvas', component: Canvas, children: [
         { name: 'ImagePoint', path: "", component: ImagePoint},
         { name: 'imageParticle', path: "particle", component: ImageParticle},
+        { name: 'Music', path: "music", component: Music},
     ] },
     { path: '/tools', component: Tools },
   ]

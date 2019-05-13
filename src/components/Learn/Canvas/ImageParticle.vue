@@ -2,7 +2,7 @@
     <div class="canvas-box" id="canvas-box">
         <div class="file-box">
             <input type="file" id="image" />
-            <button type="button" @click="start()">开始</button>
+            <button type="button" @click="start()" class="btn">开始</button>
         </div>
         <canvas id="canvas">您的浏览器不支持canvas</canvas>
     </div>

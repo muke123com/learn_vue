@@ -14,7 +14,8 @@
             return {
                 list: [
                     { title: '图片闪烁动画', href: '/canvas' },
-                    { title: '图片粒子动画', href: '/canvas/particle' }
+                    { title: '图片粒子动画', href: '/canvas/particle' },
+                    { title: '音乐动画', href: '/canvas/music' }
                 ]
             }
         },
