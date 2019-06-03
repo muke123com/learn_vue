@@ -18,6 +18,7 @@ import ImagePoint from '@/components/Learn/Canvas/Image'
 import ImageParticle from '@/components/Learn/Canvas/ImageParticle'
 import Music from '@/components/Learn/Canvas/Music'
 import Tools from '@/components/Tools/Index'
+import UI from '@/components/Learn/UI/Index'
 Vue.use(Router);
 
 export default new Router({
@@ -41,5 +42,6 @@ export default new Router({
         { name: 'Music', path: "music", component: Music},
     ] },
     { path: '/tools', component: Tools },
+    { path: '/ui', component: UI },
   ]
 })
