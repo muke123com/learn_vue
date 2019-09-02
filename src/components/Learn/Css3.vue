@@ -28,6 +28,11 @@
                 <div class="path">
                     <div class="path-block"></div>
                 </div>
+                <div class="text-loading">
+                    <div class="load-line" style="width: 40%"></div>
+                    <div class="load-line" style="width: 20%"></div>
+                    <div class="load-line" style="width: 70%"></div>
+                </div>
             </div>
         </div>
         <!--resize-->
