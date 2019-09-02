@@ -9,8 +9,8 @@
 </template>
 
 <script>
-    import headerBox from '@components/Header/Header'
-    import footerBox from '@components/Footer/Footer'
+    import headerBox from './components/Header/Header'
+    import footerBox from './components/Footer/Footer'
 
     export default {
         components: {
