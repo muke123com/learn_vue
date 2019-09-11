@@ -10,8 +10,8 @@ import Interview from '@/components/Learn/Interview/Index'
 import Lifecycle from '@/components/Learn/Lifecycle'
 import Vuex from '@/components/Vuex/index'
 import VuexCalc from '@/components/Vuex/calc'
-import VueRouterList from '@/components/Learn/vueRouter/List'
-import VueRouterDetail from '@/components/Learn/vueRouter/Detail'
+import VueRouterList from '@/components/Learn/VueRouter/List'
+import VueRouterDetail from '@/components/Learn/VueRouter/Detail'
 import Transition from '@/components/Learn/Transition/Index'
 import Canvas from '@/components/Learn/Canvas/Index'
 import ImagePoint from '@/components/Learn/Canvas/Image'
@@ -19,6 +19,7 @@ import ImageParticle from '@/components/Learn/Canvas/ImageParticle'
 import Music from '@/components/Learn/Canvas/Music'
 import Tools from '@/components/Tools/Index'
 import UI from '@/components/Learn/UI/Index'
+import Design from '@/components/Learn/Design/Index'
 Vue.use(Router);
 
 export default new Router({
@@ -43,5 +44,6 @@ export default new Router({
     ] },
     { path: '/tools', component: Tools },
     { path: '/ui', component: UI },
+    { path: '/design', component: Design },
   ]
 })
