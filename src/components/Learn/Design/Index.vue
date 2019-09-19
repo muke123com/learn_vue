@@ -154,35 +154,34 @@ export default {
     proxy() {
       this.text = `为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，一个对象不适合或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用。`;
       this.tips = `本体对象和代理对象拥有相同的方法，在用户看来并不知道请求的本体对象还是代理对象。`;
-      class MyImage {
-        constructor() {
-          this.img = new Image();
-          document.body.appendChild(this.img);
-        }
-        setSrc(src) {
-          this.img.src = src;
-        }
-      }
-
-      class ProxyImage {
-        constructor() {
-          this.proxyImage = new Image();
-        }
-        setSrc(src) {
-          let myImageObj = new MyImage();
-          myImageObj.img.src = require("@/assets/loading.gif");
-          this.proxyImage.src = src;
-          // 由ProxyImage代理，加载完后再将图片交给 MyImage
-          this.proxyImage.onload = function() {
-            myImageObj.img.src = src;
-          };
+      // es6代理模式
+      const getFib = (number) => {
+        if(number <= 2) {
+          return 1
+        } else {
+          return getFib(number - 1) + getFib(number - 2)
         }
       }
 
-      var proxyImage = new ProxyImage();
-      proxyImage.setSrc(
-        "https://www.quandashi.com/qdshome/plus/images/plus-bg.jpg"
-      ); //服务器资源url
+      const getCacheProxy = (fn, cache = new Map()) => {
+        return new Proxy(fn, {
+          apply(target, context, args) {
+            const argsString = args.join(' ');
+            if(cache.has(argsString)) {
+              console.log(`输出${args}的缓存结果：${cache.get(argsString)}`);
+
+              return cache.get(argsString);
+            }
+            const result = fn(...args);
+            cache.set(argsString, result);
+
+            return result;
+          }
+        })
+      }
+
+
+
     },
     // 策略模式
     strategy() {

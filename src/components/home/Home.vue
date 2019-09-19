@@ -57,6 +57,10 @@
                 <h2>Class</h2>
                 <learn-class></learn-class>
             </li>
+            <li>
+                <h2>Proxy</h2>
+                <learn-proxy></learn-proxy>
+            </li>
         </ul>
     </div>
 </template>
@@ -65,17 +69,18 @@
     //组件传值
     import ParentBox from '../Learn/componentValue/Parent'
     //promise同步异步
-    import PromiseBox from '../Learn/es6/Promise'
-    import AsyncBox from '../Learn/es6/Async'
-    import ArrayFilterBox from '../Learn/es6/ArrayFilter'
+    import PromiseBox from '../Learn/Es6/Promise'
+    import AsyncBox from '../Learn/Es6/Async'
+    import ArrayFilterBox from '../Learn/Es6/ArrayFilter'
     import LessBox from '../Learn/Less'
     import TransitionBox from '../utils/Transition'
     import timeBox from '../utils/Time'
     import vuexBox from '../Vuex/index'
     import Parent from "../Learn/componentValue/Parent.vue";
-    import ArrayFilter from "../Learn/es6/ArrayFilter.vue";
-    import ObjectKnowledge from "../Learn/es6/ObjectKnowledge.vue";
-    import LearnClass from "../Learn/es6/ClassLearn.vue";
+    import ArrayFilter from "../Learn/Es6/ArrayFilter.vue";
+    import ObjectKnowledge from "../Learn/Es6/ObjectKnowledge.vue";
+    import LearnClass from "../Learn/Es6/ClassLearn.vue";
+    import LearnProxy from "../Learn/Es6/Proxy.vue"
     export default {
         components: {
             LearnClass,
@@ -87,7 +92,8 @@
             LessBox,
             TransitionBox,
             timeBox,
-            vuexBox
+            vuexBox,
+            LearnProxy
         },
         name: 'home',
         data() {

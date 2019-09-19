@@ -20,6 +20,7 @@ import Music from '@/components/Learn/Canvas/Music'
 import Tools from '@/components/Tools/Index'
 import UI from '@/components/Learn/UI/Index'
 import Design from '@/components/Learn/Design/Index'
+import Unit from '@/components/Learn/UnitTest/Unit'
 Vue.use(Router);
 
 export default new Router({
@@ -45,5 +46,6 @@ export default new Router({
     { path: '/tools', component: Tools },
     { path: '/ui', component: UI },
     { path: '/design', component: Design },
+    { path: '/unit', component: Unit },
   ]
 })
