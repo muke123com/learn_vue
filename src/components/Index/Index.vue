@@ -16,6 +16,7 @@
             return {
                 list: [
                     { title: 'Vuex', href: '/vuex' },
+                    { title: 'Design', href: '/design' },
                     { title: 'css3', href: '/learn/css3' },
                     { title: 'h5', href: '/learn/h5' },
                     { title: 'canvas动画', href: '/canvas' },

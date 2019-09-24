@@ -1,6 +1,6 @@
 <template>
     <div class="time-box">
-        <span><slot></slot>{{time}}</span>
+        <span>时间：{{time}}</span>
     </div>
 </template>
 

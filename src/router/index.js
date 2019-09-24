@@ -21,6 +21,7 @@ import Tools from '@/components/Tools/Index'
 import UI from '@/components/Learn/UI/Index'
 import Design from '@/components/Learn/Design/Index'
 import Unit from '@/components/Learn/UnitTest/Unit'
+import Game from '@/components/Game/Index'
 Vue.use(Router);
 
 export default new Router({
@@ -47,5 +48,6 @@ export default new Router({
     { path: '/ui', component: UI },
     { path: '/design', component: Design },
     { path: '/unit', component: Unit },
+    { path: '/game', component: Game },
   ]
 })

@@ -34,11 +34,12 @@
 .link{
     border: 1px solid #eee;
 }
-.link li{
+.link a{
+    display: block;
     padding: 5px 10px;
     cursor: pointer;
 }
-.link li:hover{
+.link a:hover{
     color: #ff7200;
 }
 .learn-modules{
