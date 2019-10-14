@@ -14,7 +14,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "animejs": "^2.2.0",
     "axios": "^0.18.0",
     "less-loader": "^4.1.0",
     "vue": "^2.5.2",
